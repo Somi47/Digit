@@ -1,0 +1,447 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: HF1.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "HF1.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "HF1"
+Output Format                      : NGC
+Target Device                      : xc3s250e-4-tq144
+
+---- Source Options
+Top Module Name                    : HF1
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "STD_FSM.v" in library work
+Compiling verilog file "MAN_FSM.v" in library work
+Module <STD_FSM> compiled
+Compiling verilog file "IND_FSM.v" in library work
+Module <MAN_FSM> compiled
+Compiling verilog file "HF1.v" in library work
+Module <IND_FSM> compiled
+Module <HF1> compiled
+No errors in compilation
+Analysis of file <"HF1.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <HF1> in library <work>.
+
+Analyzing hierarchy for module <MAN_FSM> in library <work>.
+
+Analyzing hierarchy for module <STD_FSM> in library <work> with parameters.
+	A = "100"
+	B = "001"
+	C = "011"
+	D = "110"
+	E = "010"
+	F = "111"
+	G = "101"
+	START = "000"
+
+Analyzing hierarchy for module <IND_FSM> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <HF1>.
+Module <HF1> is correct for synthesis.
+ 
+Analyzing module <MAN_FSM> in library <work>.
+Module <MAN_FSM> is correct for synthesis.
+ 
+Analyzing module <STD_FSM> in library <work>.
+	A = 3'b100
+	B = 3'b001
+	C = 3'b011
+	D = 3'b110
+	E = 3'b010
+	F = 3'b111
+	G = 3'b101
+	START = 3'b000
+Module <STD_FSM> is correct for synthesis.
+ 
+Analyzing module <IND_FSM> in library <work>.
+Module <IND_FSM> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <MAN_FSM>.
+    Related source file is "MAN_FSM.v".
+    Found 3-bit register for signal <state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <MAN_FSM> synthesized.
+
+
+Synthesizing Unit <STD_FSM>.
+    Related source file is "STD_FSM.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <STD_FSM> synthesized.
+
+
+Synthesizing Unit <IND_FSM>.
+    Related source file is "IND_FSM.v".
+    Found 8x3-bit ROM for signal <out>.
+    Found 3-bit up counter for signal <cnt>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+Unit <IND_FSM> synthesized.
+
+
+Synthesizing Unit <HF1>.
+    Related source file is "HF1.v".
+Unit <HF1> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 8x3-bit ROM                                           : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 1
+ 3-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <STD/state/FSM> on signal <state[1:8]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00000001
+ 100   | 00000010
+ 001   | 00000100
+ 011   | 00001000
+ 110   | 00010000
+ 010   | 00100000
+ 111   | 01000000
+ 101   | 10000000
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 8x3-bit ROM                                           : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <HF1> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block HF1, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : HF1.ngr
+Top Level Output File Name         : HF1
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 11
+
+Cell Usage :
+# BELS                             : 10
+#      INV                         : 2
+#      LUT2                        : 1
+#      LUT3                        : 4
+#      LUT4                        : 3
+# FlipFlops/Latches                : 14
+#      FDR                         : 12
+#      FDRE                        : 1
+#      FDS                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 1
+#      OBUF                        : 9
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250etq144-4 
+
+ Number of Slices:                        8  out of   2448     0%  
+ Number of Slice Flip Flops:             14  out of   4896     0%  
+ Number of 4 input LUTs:                 10  out of   4896     0%  
+ Number of IOs:                          11
+ Number of bonded IOBs:                  11  out of    108    10%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 14    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 2.610ns (Maximum Frequency: 383.142MHz)
+   Minimum input arrival time before clock: 3.129ns
+   Maximum output required time after clock: 5.749ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.610ns (frequency: 383.142MHz)
+  Total number of paths / destination ports: 22 / 15
+-------------------------------------------------------------------------
+Delay:               2.610ns (Levels of Logic = 1)
+  Source:            IND/cnt_0 (FF)
+  Destination:       IND/cnt_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: IND/cnt_0 to IND/cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.591   0.587  IND/cnt_0 (IND/cnt_0)
+     INV:I->O              1   0.704   0.420  IND/Mcount_cnt_xor<0>11_INV_0 (Result<0>)
+     FDR:D                     0.308          IND/cnt_0
+    ----------------------------------------
+    Total                      2.610ns (1.603ns logic, 1.007ns route)
+                                       (61.4% logic, 38.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.129ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       IND/cnt_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to IND/cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.218   1.000  rst_IBUF (rst_IBUF)
+     FDR:R                     0.911          IND/cnt_0
+    ----------------------------------------
+    Total                      3.129ns (2.129ns logic, 1.000ns route)
+                                       (68.0% logic, 32.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 22 / 9
+-------------------------------------------------------------------------
+Offset:              5.749ns (Levels of Logic = 2)
+  Source:            STD/state_FSM_FFd2 (FF)
+  Destination:       std_out<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: STD/state_FSM_FFd2 to std_out<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.591   0.762  STD/state_FSM_FFd2 (STD/state_FSM_FFd2)
+     LUT4:I0->O            1   0.704   0.420  STD/state_or00011 (std_out_1_OBUF)
+     OBUF:I->O                 3.272          std_out_1_OBUF (std_out<1>)
+    ----------------------------------------
+    Total                      5.749ns (4.567ns logic, 1.182ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.52 secs
+ 
+--> 
+
+Total memory usage is 293712 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

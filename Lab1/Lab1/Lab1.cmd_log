@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab1/Lab1/Lab1.xst" -ofn "C:/BME/Digit 1/Lab1/Lab1/Lab1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "C:/BME/Digit 1/Lab1/LOGSYS_SP3E.ucf" -p xc3s250e-tq144-4 "Lab1.ngc" Lab1.ngd  
+map -intstyle ise -p xc3s250e-tq144-4 -cm area -ir off -pr off -c 100 -o Lab1_map.ncd Lab1.ngd Lab1.pcf 
+par -w -intstyle ise -ol high -t 1 Lab1_map.ncd Lab1.ncd Lab1.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Lab1.twx Lab1.ncd -o Lab1.twr Lab1.pcf 
+bitgen -intstyle ise -f Lab1.ut Lab1.ncd 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab1/Lab1/Lab1.xst" -ofn "C:/BME/Digit 1/Lab1/Lab1/Lab1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "C:/BME/Digit 1/Lab1/LOGSYS_SP3E.ucf" -p xc3s250e-tq144-4 "Lab1.ngc" Lab1.ngd  
+map -intstyle ise -p xc3s250e-tq144-4 -cm area -ir off -pr off -c 100 -o Lab1_map.ncd Lab1.ngd Lab1.pcf 
+par -w -intstyle ise -ol high -t 1 Lab1_map.ncd Lab1.ncd Lab1.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Lab1.twx Lab1.ncd -o Lab1.twr Lab1.pcf 
+bitgen -intstyle ise -f Lab1.ut Lab1.ncd 

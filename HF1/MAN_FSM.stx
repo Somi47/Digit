@@ -1,0 +1,36 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/BME/Digit 1/HF1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to C:/BME/Digit 1/HF1/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "MAN_FSM.v" in library work
+Module <MAN_FSM> compiled
+ERROR:HDLCompilers:246 - "MAN_FSM.v" line 23 Reference to vector reg 'next_state' is not a legal net lvalue
+ERROR:HDLCompilers:53 - "MAN_FSM.v" line 23 Illegal left hand side of continuous assign
+ERROR:HDLCompilers:246 - "MAN_FSM.v" line 24 Reference to vector reg 'next_state' is not a legal net lvalue
+ERROR:HDLCompilers:53 - "MAN_FSM.v" line 24 Illegal left hand side of continuous assign
+ERROR:HDLCompilers:246 - "MAN_FSM.v" line 25 Reference to vector reg 'next_state' is not a legal net lvalue
+ERROR:HDLCompilers:53 - "MAN_FSM.v" line 25 Illegal left hand side of continuous assign
+Analysis of file <"MAN_FSM.prj"> failed.
+--> 
+
+Total memory usage is 265312 kilobytes
+
+Number of errors   :    6 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

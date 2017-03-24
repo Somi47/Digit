@@ -1,0 +1,6 @@
+verilog isim_temp "STD_FSM.v"
+verilog isim_temp "MAN_FSM.v"
+verilog isim_temp "IND_FSM.v"
+verilog isim_temp "HF1.v"
+verilog isim_temp "SIM_MODUL.v"
+verilog isim_temp "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"

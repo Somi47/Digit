@@ -1,0 +1,6 @@
+verilog work "STD_FSM.v"
+verilog work "MAN_FSM.v"
+verilog work "IND_FSM.v"
+verilog work "HF1.v"
+verilog work "SIM_MODUL.v"
+verilog work "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab2_1/Lab2_1b.xst" -ofn "C:/BME/Digit 1/Lab2_1/Lab2_1b.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LOGSYS_SP3E.ucf -p xc3s250e-tq144-4 "Lab2_1b.ngc" Lab2_1b.ngd  
+map -intstyle ise -p xc3s250e-tq144-4 -cm area -ir off -pr off -c 100 -o Lab2_1b_map.ncd Lab2_1b.ngd Lab2_1b.pcf 
+par -w -intstyle ise -ol high -t 1 Lab2_1b_map.ncd Lab2_1b.ncd Lab2_1b.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Lab2_1b.twx Lab2_1b.ncd -o Lab2_1b.twr Lab2_1b.pcf -ucf LOGSYS_SP3E.ucf 
+bitgen -intstyle ise -f Lab2_1b.ut Lab2_1b.ncd 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab2_1/Lab2_1b.xst" -ofn "C:/BME/Digit 1/Lab2_1/Lab2_1b.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LOGSYS_SP3E.ucf -p xc3s250e-tq144-4 "Lab2_1b.ngc" Lab2_1b.ngd  
+map -intstyle ise -p xc3s250e-tq144-4 -cm area -ir off -pr off -c 100 -o Lab2_1b_map.ncd Lab2_1b.ngd Lab2_1b.pcf 
+par -w -intstyle ise -ol high -t 1 Lab2_1b_map.ncd Lab2_1b.ncd Lab2_1b.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Lab2_1b.twx Lab2_1b.ncd -o Lab2_1b.twr Lab2_1b.pcf -ucf LOGSYS_SP3E.ucf 
+bitgen -intstyle ise -f Lab2_1b.ut Lab2_1b.ncd 

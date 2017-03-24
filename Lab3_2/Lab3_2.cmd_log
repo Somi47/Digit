@@ -1,0 +1,11 @@
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+xst -intstyle ise -ifn "C:/BME/Digit 1/Lab3_2/Lab3_2.xst" -ofn "C:/BME/Digit 1/Lab3_2/Lab3_2.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LOGSYS_SP3E.ucf -p xc3s250e-tq144-4 "Lab3_2.ngc" Lab3_2.ngd  
+map -intstyle ise -p xc3s250e-tq144-4 -cm area -ir off -pr off -c 100 -o Lab3_2_map.ncd Lab3_2.ngd Lab3_2.pcf 
+par -w -intstyle ise -ol high -t 1 Lab3_2_map.ncd Lab3_2.ncd Lab3_2.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Lab3_2.twx Lab3_2.ncd -o Lab3_2.twr Lab3_2.pcf -ucf LOGSYS_SP3E.ucf 
+bitgen -intstyle ise -f Lab3_2.ut Lab3_2.ncd 

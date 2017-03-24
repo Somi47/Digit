@@ -1,0 +1,4 @@
+verilog work "STD_FSM.v"
+verilog work "MAN_FSM.v"
+verilog work "IND_FSM.v"
+verilog work "HF1.v"

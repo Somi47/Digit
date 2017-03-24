@@ -1,0 +1,8 @@
+Release 14.6 Drc P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Sep 15 11:01:10 2016
+
+drc -z Lab2_1a.ncd Lab2_1a.pcf
+
+DRC detected 0 errors and 0 warnings.

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/BME/Digit 1/Szorg3/EncoderInvalidSignalCheck.xst" -ofn "C:/BME/Digit 1/Szorg3/EncoderInvalidSignalCheck.syr" 

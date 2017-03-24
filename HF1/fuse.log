@@ -1,0 +1,25 @@
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/BME/Digit 1/HF1/SIM_MODUL_isim_beh.exe -prj C:/BME/Digit 1/HF1/SIM_MODUL_beh.prj work.SIM_MODUL work.glbl 
+ISim P.68d (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/BME/Digit 1/HF1/STD_FSM.v" into library work
+Analyzing Verilog file "C:/BME/Digit 1/HF1/MAN_FSM.v" into library work
+Analyzing Verilog file "C:/BME/Digit 1/HF1/IND_FSM.v" into library work
+Analyzing Verilog file "C:/BME/Digit 1/HF1/HF1.v" into library work
+Analyzing Verilog file "C:/BME/Digit 1/HF1/SIM_MODUL.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module MAN_FSM
+Compiling module STD_FSM
+Compiling module IND_FSM
+Compiling module HF1
+Compiling module SIM_MODUL
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 6 Verilog Units
+Built simulation executable C:/BME/Digit 1/HF1/SIM_MODUL_isim_beh.exe
+Fuse Memory Usage: 27836 KB
+Fuse CPU Usage: 358 ms

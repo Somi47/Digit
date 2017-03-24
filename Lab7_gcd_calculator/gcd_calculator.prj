@@ -1,0 +1,3 @@
+verilog work "src/LIP_4digit.v"
+verilog work "src/gcd.v"
+verilog work "src/gcd_calculator.v"
